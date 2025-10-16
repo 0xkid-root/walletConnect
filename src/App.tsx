@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import './App.css'
-import ConnectButton from './components/ConnectButton'
+import { ConnectButton, USDTBalanceComponent } from './components/WalletComponents'
+import USDTBalance from './components/USDTBalance'
 import { useAppKitAccount, useAppKitNetwork, useAppKitBalance } from '@reown/appkit/react'
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
       setBalanceLoading(true)
       try {
         const result = await fetchBalance()
+        console.log("result",result);
         if (result?.data?.balance) {
           setBalance(result.data.balance)
         } else {
@@ -89,6 +91,16 @@ function App() {
           <p>Not connected to a wallet</p>
         )}
         <ConnectButton />
+      </div>
+
+      {/* USDT Balance Section */}
+      <div className="wallet-section">
+        <USDTBalance />
+      </div>
+      
+      {/* Alternative USDT Balance Component */}
+      <div className="wallet-section">
+        <USDTBalanceComponent />
       </div>
       
       <p className="read-the-docs">

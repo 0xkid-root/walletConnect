@@ -1,8 +1,11 @@
+"use client";
+
 import { createAppKit } from "@reown/appkit/react";
 import { Ethers5Adapter } from "@reown/appkit-adapter-ethers5";
 import { mainnet, arbitrum, polygonAmoy } from "@reown/appkit/networks";
 
 // 1. Get projectId at https://dashboard.reown.com
+// Using a placeholder project ID for testing - replace with your own
 const projectId = "f3c6273e32b584adc4c08342e4982a84";
 
 // 2. Create a metadata object
@@ -23,3 +26,7 @@ export const modal = createAppKit({
     analytics: true, // Optional - defaults to your Cloud configuration
   },
 });
+
+export function AppKit() {
+  return null;
+}
