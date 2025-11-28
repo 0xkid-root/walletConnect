@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import './App.css'
-import { ConnectButton, USDTBalanceComponent } from './components/WalletComponents'
-import USDTBalance from './components/USDTBalance'
+import { ConnectButton, } from './components/WalletComponents'
 import { useAppKitAccount, useAppKitNetwork, useAppKitBalance } from '@reown/appkit/react'
 
 function App() {
@@ -93,19 +92,9 @@ function App() {
         <ConnectButton />
       </div>
 
-      {/* USDT Balance Section */}
-      <div className="wallet-section">
-        <USDTBalance />
-      </div>
+
       
-      {/* Alternative USDT Balance Component */}
-      <div className="wallet-section">
-        <USDTBalanceComponent />
-      </div>
-      
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
     </>
   )
 }
